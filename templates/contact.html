@@ -1,320 +1,150 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Sanwar Furniture</title>
+{% extends "base.html" %}
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+{% block title %}
+Contact | Ma Parvati Furnitures
+{% endblock %}
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+{% block content %}
 
-    <style>
+<!-- HERO -->
+<section class="text-center py-24 px-6">
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+    <p class="text-yellow-500 uppercase tracking-[5px] mb-4">
+        Contact Us
+    </p>
 
-        html{
-            scroll-behavior:smooth;
-        }
+    <h1 class="text-4xl md:text-7xl font-extrabold leading-tight">
 
-        body{
-            font-family:'Poppins', sans-serif;
-            background:#0f0f0f;
-            color:white;
-            overflow-x:hidden;
-        }
+        Let's Build Something
+        <br>
+        Beautiful Together
 
-        input,
-        textarea{
-            outline:none;
-        }
+    </h1>
 
-    </style>
+    <p class="mt-8 text-gray-400 text-lg md:text-2xl
+    max-w-4xl mx-auto leading-relaxed">
 
-</head>
+        Have a furniture idea or custom carpentry project?
+        Send us your inquiry and we’ll help bring your vision to life.
 
-<body>
+    </p>
 
-    <!-- NAVBAR -->
-    <nav class="flex items-center justify-between
-    mx-6 md:mx-12 mt-6
-    px-8 py-5 rounded-2xl
-    bg-white/10 backdrop-blur-md
-    border border-white/20 text-white">
+</section>
 
-        <!-- LOGO -->
-        <a href="/"
-        class="text-2xl md:text-3xl font-bold
-        hover:text-yellow-400 transition duration-300">
 
-            Sanwar Furniture
 
-        </a>
+<!-- CONTACT FORM -->
+<section class="px-6 md:px-16 pb-28">
 
-        <!-- NAV LINKS -->
-        <ul class="hidden md:flex gap-10 text-lg font-medium">
+    <form
+    method="POST"
+    class="max-w-3xl mx-auto
+    bg-[#181818]
+    p-8 md:p-14
+    rounded-3xl
+    border border-white/10
+    shadow-2xl">
 
-            <li>
-                <a href="/" class="hover:text-yellow-400 transition">
-                    Home
-                </a>
-            </li>
+        <!-- NAME -->
+        <div class="mb-8">
 
-            <li>
-                <a href="/gallery" class="hover:text-yellow-400 transition">
-                    Gallery
-                </a>
-            </li>
+            <label class="block text-lg mb-3 text-gray-300">
+                Your Name
+            </label>
 
-            <li>
-                <a href="/services" class="hover:text-yellow-400 transition">
-                    Services
-                </a>
-            </li>
-
-            <li>
-                <a href="/contact" class="text-yellow-400">
-                    Contact
-                </a>
-            </li>
-
-        </ul>
-
-    </nav>
-
-
-
-    <!-- HERO -->
-    <section class="text-center py-24 px-6">
-
-        <p class="text-yellow-500 uppercase tracking-[5px] mb-4">
-            Contact Us
-        </p>
-
-        <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
-
-            Let's Build Something
-            <br>
-            Beautiful Together
-
-        </h1>
-
-        <p class="mt-8 text-gray-400 text-lg md:text-2xl
-        max-w-4xl mx-auto leading-relaxed">
-
-            Have a furniture idea or custom carpentry project?
-            Send us your inquiry and we’ll help bring your vision to life.
-
-        </p>
-
-    </section>
-
-
-
-    <!-- CONTACT FORM -->
-    <section class="px-6 md:px-16 pb-28">
-
-        <form
-        method="POST"
-        class="max-w-3xl mx-auto
-        bg-[#181818]
-        p-10 md:p-14
-        rounded-3xl
-        border border-white/10
-        shadow-2xl">
-
-            <!-- NAME -->
-            <div class="mb-8">
-
-                <label class="block text-lg mb-3 text-gray-300">
-                    Your Name
-                </label>
-
-                <input
-                type="text"
-                name="name"
-                placeholder="Enter your full name"
-                required
-                class="w-full
-                bg-black
-                border border-white/10
-                rounded-2xl
-                px-5 py-4
-                text-white
-                focus:border-yellow-500
-                transition duration-300">
-
-            </div>
-
-
-
-            <!-- PHONE -->
-            <div class="mb-8">
-
-                <label class="block text-lg mb-3 text-gray-300">
-                    Phone Number
-                </label>
-
-                <input
-                type="text"
-                name="phone"
-                placeholder="Enter your phone number"
-                required
-                class="w-full
-                bg-black
-                border border-white/10
-                rounded-2xl
-                px-5 py-4
-                text-white
-                focus:border-yellow-500
-                transition duration-300">
-
-            </div>
-
-
-
-            <!-- MESSAGE -->
-            <div class="mb-8">
-
-                <label class="block text-lg mb-3 text-gray-300">
-                    Your Requirement
-                </label>
-
-                <textarea
-                name="message"
-                rows="6"
-                placeholder="Tell us about your furniture needs..."
-                required
-                class="w-full
-                bg-black
-                border border-white/10
-                rounded-2xl
-                px-5 py-4
-                text-white
-                resize-none
-                focus:border-yellow-500
-                transition duration-300"></textarea>
-
-            </div>
-
-
-
-            <!-- BUTTON -->
-            <div class="text-center">
-
-                <button
-                type="submit"
-                class="bg-yellow-500
-                hover:bg-yellow-400
-                text-black
-                font-semibold
-                px-10 py-4
-                rounded-full
-                text-lg
-                transition duration-300
-                hover:scale-105
-                shadow-lg">
-
-                    Send Inquiry
-
-                </button>
-
-            </div>
-
-        </form>
-
-    </section>
-
-
-
-    <!-- CONTACT INFO -->
-    <section class="bg-black py-24 px-6 md:px-16">
-
-        <div class="text-center mb-20">
-
-            <p class="text-yellow-500 uppercase tracking-[5px] mb-4">
-                Reach Us
-            </p>
-
-            <h2 class="text-5xl md:text-6xl font-bold">
-                Visit Our Workshop
-            </h2>
+            <input
+            type="text"
+            name="name"
+            placeholder="Enter your full name"
+            required
+            class="w-full
+            bg-black
+            border border-white/10
+            rounded-2xl
+            px-5 py-4
+            text-white
+            focus:border-yellow-500
+            transition duration-300">
 
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-
-            <!-- PHONE -->
-            <div class="bg-[#181818]
-            p-10 rounded-3xl
-            border border-white/10">
-
-                <div class="text-5xl mb-6">
-                    📞
-                </div>
-
-                <h3 class="text-2xl font-semibold mb-4">
-                    Call Us
-                </h3>
-
-                <p class="text-gray-400 text-lg">
-                    +91 XXXXX XXXXX
-                </p>
-
-            </div>
 
 
+        <!-- PHONE -->
+        <div class="mb-8">
 
-            <!-- LOCATION -->
-            <div class="bg-[#181818]
-            p-10 rounded-3xl
-            border border-white/10">
+            <label class="block text-lg mb-3 text-gray-300">
+                Phone Number
+            </label>
 
-                <div class="text-5xl mb-6">
-                    📍
-                </div>
-
-                <h3 class="text-2xl font-semibold mb-4">
-                    Location
-                </h3>
-
-                <p class="text-gray-400 text-lg">
-                    Rajasthan, India
-                </p>
-
-            </div>
-
-
-
-            <!-- TIMING -->
-            <div class="bg-[#181818]
-            p-10 rounded-3xl
-            border border-white/10">
-
-                <div class="text-5xl mb-6">
-                    🕒
-                </div>
-
-                <h3 class="text-2xl font-semibold mb-4">
-                    Working Hours
-                </h3>
-
-                <p class="text-gray-400 text-lg">
-                    Mon - Sat : 9AM - 8PM
-                </p>
-
-            </div>
+            <input
+            type="text"
+            name="phone"
+            placeholder="Enter your phone number"
+            required
+            class="w-full
+            bg-black
+            border border-white/10
+            rounded-2xl
+            px-5 py-4
+            text-white
+            focus:border-yellow-500
+            transition duration-300">
 
         </div>
 
-    </section>
 
-</body>
-</html>
+
+        <!-- MESSAGE -->
+        <div class="mb-8">
+
+            <label class="block text-lg mb-3 text-gray-300">
+                Your Requirement
+            </label>
+
+            <textarea
+            name="message"
+            rows="6"
+            placeholder="Tell us about your furniture needs..."
+            required
+            class="w-full
+            bg-black
+            border border-white/10
+            rounded-2xl
+            px-5 py-4
+            text-white
+            resize-none
+            focus:border-yellow-500
+            transition duration-300"></textarea>
+
+        </div>
+
+
+
+        <!-- BUTTON -->
+        <div class="text-center">
+
+            <button
+            type="submit"
+            class="bg-yellow-500
+            hover:bg-yellow-400
+            text-black
+            font-semibold
+            px-10 py-4
+            rounded-full
+            text-lg
+            transition duration-300
+            hover:scale-105
+            shadow-lg">
+
+                Send Inquiry
+
+            </button>
+
+        </div>
+
+    </form>
+
+</section>
+
+{% endblock %}

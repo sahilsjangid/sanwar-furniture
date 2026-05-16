@@ -1,120 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanwar Furniture</title>
+{% extends "base.html" %}
 
-    <script src="https://cdn.tailwindcss.com"></script>
+{% block title %}
+Ma Parvati Furnitures
+{% endblock %}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+{% block content %}
 
-    <style>
+<!-- HERO SECTION -->
+<section
+class="relative h-screen bg-cover bg-center mt-[-110px]"
+style="background-image:url('{{ url_for('static', filename='images/hero.jpg') }}');">
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+    <!-- OVERLAY -->
+    <div class="absolute inset-0 bg-black/55"></div>
 
-        body{
-            font-family:'Poppins', sans-serif;
-            background:black;
-            overflow-x:hidden;
-        }
+    <!-- HERO CONTENT -->
+    <div class="relative z-10 flex flex-col items-center justify-center
+    text-center h-full px-6">
 
-    </style>
+        <h1 class="text-4xl md:text-7xl font-extrabold
+        leading-tight max-w-5xl">
 
-</head>
+            Custom Furniture Crafted
+            <br>
+            For Modern Living
 
-<body>
+        </h1>
 
-    <!-- HERO SECTION -->
-    <section
-        class="relative h-screen bg-cover bg-center"
-        style="background-image:url('{{ url_for('static', filename='images/hero.jpg') }}');"
-    >
+        <p class="mt-8 text-gray-300 text-lg md:text-2xl
+        max-w-3xl leading-relaxed">
 
-        <!-- OVERLAY -->
-        <div class="absolute inset-0 bg-black/55"></div>
+            Premium carpentry and furniture solutions built
+            with precision, elegance, and durability.
 
-        <!-- NAVBAR -->
-        <nav class="relative z-20 flex items-center justify-between
-        mx-6 md:mx-12 top-6
-        px-8 py-5 rounded-2xl
-        bg-white/10 backdrop-blur-md
-        border border-white/20 text-white">
+        </p>
 
-            <a href="/"
-            class="text-2xl md:text-3xl font-bold hover:text-yellow-400 transition duration-300">
+        <div class="mt-10 flex flex-col sm:flex-row gap-5">
 
-                Sanwar Furniture
+            <a href="/gallery"
+            class="bg-yellow-500 hover:bg-yellow-400
+            text-black font-semibold px-8 py-4
+            rounded-full text-lg transition duration-300
+            hover:scale-105">
+
+                View Gallery
 
             </a>
 
-            <ul class="hidden md:flex gap-10 text-lg font-medium">
+            <a href="/contact"
+            class="border border-white hover:bg-white
+            hover:text-black text-white font-semibold
+            px-8 py-4 rounded-full text-lg
+            transition duration-300 hover:scale-105">
 
-                <li><a href="/" class="hover:text-yellow-400 transition">Home</a></li>
+                Contact Us
 
-                <li><a href="/gallery" class="hover:text-yellow-400 transition">Gallery</a></li>
-
-                <li><a href="/services" class="hover:text-yellow-400 transition">Services</a></li>
-
-                <li><a href="/contact" class="hover:text-yellow-400 transition">Contact</a></li>
-
-            </ul>
-
-        </nav>
-
-        <!-- HERO CONTENT -->
-        <div class="relative z-10 flex flex-col items-center justify-start
-        text-center h-[85vh] px-6 pt-20">
-
-            <h2 class="text-white text-5xl md:text-7xl
-            font-extrabold leading-tight max-w-5xl">
-
-                Custom Furniture Crafted
-                <br>
-                For Modern Living
-
-            </h2>
-
-            <p class="mt-8 text-gray-200 text-lg md:text-2xl
-            max-w-3xl leading-relaxed">
-
-                Premium carpentry and furniture solutions built with
-                precision, elegance, and durability.
-
-            </p>
-
-            <div class="mt-10 flex flex-col sm:flex-row gap-5">
-
-                <a href="/gallery"
-                class="bg-yellow-500 hover:bg-yellow-400
-                text-black font-semibold px-8 py-4
-                rounded-full text-lg transition duration-300
-                shadow-lg hover:scale-105">
-
-                    View Gallery
-
-                </a>
-
-                <a href="/contact"
-                class="border border-white hover:bg-white
-                hover:text-black text-white font-semibold
-                px-8 py-4 rounded-full text-lg
-                transition duration-300 hover:scale-105">
-
-                    Contact Us
-
-                </a>
-
-            </div>
+            </a>
 
         </div>
 
-    </section>
+    </div>
 
-</body>
-</html>
+</section>
+
+{% endblock %}
